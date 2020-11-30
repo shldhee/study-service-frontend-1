@@ -13,13 +13,30 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from "vue";
+import { ref, defineComponent, computed } from "vue";
 import { useStore } from "vuex";
+import { ActionTypes } from "@/store/modules/auth/action-types";
 
 export default defineComponent({
   setup() {
     const store = useStore();
     console.log(store);
+    const user = computed(() => store.state.auth.user);
+    const gettuerUser = computed(() => store.getters.auth.getUserAge);
+
+    // function resetCounter() {
+    //   store.commit(MutationTypes.SET_COUNTER, 0);
+    // }
+
+    // async function getUser() {
+    //   const result = await store.auth.dispatch(ActionTypes.GET_USER);
+    // }
+
+    store.dispatch(ActionTypes.GET_USER, 256);
+
+    console.log(store, "store");
+    console.log(user, "user");
+    console.log(gettuerUser, "gettuerUser");
     console.log(store.state.auth);
     const loggined = ref(true);
     return { loggined };

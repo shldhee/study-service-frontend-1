@@ -3,11 +3,11 @@ import auth from "./modules/auth/index";
 
 export default createStore({
   modules: {
-    auth
+    auth,
   },
-  state: {},
+  state: { user: {} },
   mutations: {},
-  actions: {}
+  actions: {},
 });
 
 // import { createStore } from "vuex";
