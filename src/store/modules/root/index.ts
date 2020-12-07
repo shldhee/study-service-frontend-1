@@ -4,13 +4,13 @@ import { getters } from "./getters";
 import { actions } from "./actions";
 import { mutations } from "./mutations";
 import { state } from "./state";
-import counterModule from "../counter";
+// import counterModule from "../counter";
 import AuthModue from "../auth";
 
 // Modules
 const modules: ModuleTree<IRootState> = {
-  counterModule,
-  AuthModue
+  // counterModule,
+  AuthModue,
 };
 
 const root: Module<IRootState, IRootState> = {
@@ -18,7 +18,7 @@ const root: Module<IRootState, IRootState> = {
   getters,
   mutations,
   actions,
-  modules
+  modules,
 };
 
 export default root;

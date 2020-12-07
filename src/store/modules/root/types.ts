@@ -2,7 +2,7 @@ import {
   IRootState,
   RootMutationsTypes,
   IRootGettersTypes,
-  RootActionsTypes
+  RootActionsTypes,
 } from "@/store/interfaces";
 import { Store as VuexStore, CommitOptions, DispatchOptions } from "vuex";
 

@@ -49,7 +49,7 @@ const auth: Module<AuthStateTypes, IRootState> = {
   state,
   getters,
   mutations,
-  actions
+  actions,
 };
 
 export default auth;

@@ -10,7 +10,7 @@
     <div>
       <hr />
       <h1>currentUser : {{ currentUser }}</h1>
-      <h1>welcomeUser : {{ welcomeUser }}</h1>
+
       <button class="btn" @click="resetUser">
         Reset User
       </button>
@@ -31,9 +31,9 @@ export default defineComponent({
   setup() {
     const store = useStore();
     console.log(store);
-    const currentUser = computed(() => store.getters.currentUser);
-    const welcomeUser = computed(() => store.getters.welcomeUser);
-    const isRootDispatchSet = computed(() => store.getters.getRootDispatch);
+    const currentUser = computed(() => store.getters.getCurrentUser);
+
+    // const isRootDispatchSet = computed(() => store.getters.getRootDispatch);
 
     function resetUser() {
       store.commit(AllMutationTypes.RESET_USER);
@@ -45,9 +45,9 @@ export default defineComponent({
     function setRootDispatch() {
       store.dispatch(AllActionTypes.USER_CHECK);
     }
-    async function getCounter() {
-      await store.dispatch(AllActionTypes.GET_COUNTER, 100);
-    }
+    // async function getCounter() {
+    //   await store.dispatch(AllActionTypes.GET_COUNTER, 100);
+    // }
 
     // function crossCounterDispatch() {
     //   store.dispatch(AllActionTypes.CALL_COUNTER1);
@@ -56,16 +56,16 @@ export default defineComponent({
     const loggined = ref(true);
     return {
       currentUser,
-      welcomeUser,
+      // welcomeUser,
       resetUser,
-      getCounter,
+      // getCounter,
       setRootDispatch,
-      isRootDispatchSet,
+      // isRootDispatchSet,
       setUsername,
-      loggined
+      loggined,
       // crossCounterDispatch
     };
-  }
+  },
 });
 </script>
 

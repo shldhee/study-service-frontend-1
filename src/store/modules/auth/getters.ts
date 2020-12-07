@@ -2,15 +2,24 @@ import { GetterTree } from "vuex";
 import {
   AuthGettersTypes,
   AuthStateTypes,
-  IRootState
+  IRootState,
 } from "./../../interfaces";
 
 export const getters: GetterTree<AuthStateTypes, IRootState> &
   AuthGettersTypes = {
-  currentUser: (state: AuthStateTypes) => {
-    return state.user + "current";
+  getCurrentUser: (state: AuthStateTypes) => {
+    return state.user || {};
   },
-  welcomeUser: (state: AuthStateTypes) => {
-    return state.user + "Welcome";
-  }
+  // welcomeUser: (state: AuthStateTypes) => {
+  //   return state.user + "Welcome";
+  // }
 };
+
+// import { GetterTree } from "vuex";
+// import { AuthGettersTypes, AuthState } from "./../../interfaces";
+
+// export const getters: GetterTree<AuthState, AuthState> & IAuthGettersTypes = {
+//   getCurrentUser: (state: IAuthState): object => {
+//     return state.user;
+//   },
+// };

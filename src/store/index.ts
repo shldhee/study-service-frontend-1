@@ -25,7 +25,7 @@
 
 import { createStore } from "vuex";
 import { IRootState } from "@/store/interfaces";
-import { CounterStoreModuleTypes } from "./modules/counter/types";
+// import { CounterStoreModuleTypes } from "./modules/counter/types";
 import { AuthStoreModuleTypes } from "./modules/auth/types";
 import { RootStoreModuleTypes } from "./modules/root/types";
 
@@ -34,11 +34,13 @@ import root from "./modules/root";
 export const store = createStore<IRootState>(root);
 
 type StoreModules = {
-  counter: CounterStoreModuleTypes;
+  // counter: CounterStoreModuleTypes;
   auth: AuthStoreModuleTypes;
   root: RootStoreModuleTypes;
 };
 
-export type Store = CounterStoreModuleTypes<Pick<StoreModules, "counter">> &
-  AuthStoreModuleTypes<Pick<StoreModules, "auth">> &
+export type Store = AuthStoreModuleTypes<Pick<StoreModules, "auth">> &
   RootStoreModuleTypes<Pick<StoreModules, "root">>;
+// export type Store = CounterStoreModuleTypes<Pick<StoreModules, "counter">> &
+//   AuthStoreModuleTypes<Pick<StoreModules, "auth">> &
+//   RootStoreModuleTypes<Pick<StoreModules, "root">>;
